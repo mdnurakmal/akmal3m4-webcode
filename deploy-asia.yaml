@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zone-ingress
+  namespace: zoneprinter
+  labels:
+    app: zoneprinter
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: zoneprinter
+  template:
+    metadata:
+      labels:
+        app: zoneprinter
+    spec:
+      containers:
+      - name: frontend
+        image: asia-docker.pkg.dev/group4-3m4/dronegaga-artifact-registry/web@sha256:DIGEST
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080

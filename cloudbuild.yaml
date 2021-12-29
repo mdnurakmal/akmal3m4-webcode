@@ -1,0 +1,20 @@
+steps:
+  - id: "Get nodes from cluster"
+    name: "gcr.io/cloud-builders/kubectl"
+    args: ['get', 'nodes']
+    env:
+    - 'CLOUDSDK_COMPUTE_REGION=${_LOCATION}'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER}'
+
+substitutions:
+    _MULTIREGION: us # default value
+    _CLUSTER: gke-us-cluster
+    _LOCATION: us-central1
+    _FILENAME: deploy-us.yaml
+    _WORKERSPOOL: us-workers-pool
+    _PROJECT_ID: group4-3m4
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  workerPool:
+    'projects/${_PROJECT_ID}/locations/${_LOCATION}/workerPools/${_WORKERSPOOL}'

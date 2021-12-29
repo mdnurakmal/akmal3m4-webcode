@@ -1,0 +1,21 @@
+{
+  "name": "web_code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://source.developers.google.com/p/group4-3m4/r/web_code"
+  },
+  "author": "",
+  "license": "ISC"
+}
